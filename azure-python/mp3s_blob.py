@@ -17,7 +17,9 @@ def upload_to_mp3s_container(name_of_mp3):
     local_file_name = name_of_mp3
 
     # Create a local directory to hold blob data
-    local_path = "../mp3s"
+    print("after")
+    local_path = "../routes/mp3s"
+    print("before")
     script_dir = os.path.dirname(os.path.abspath(__file__))
 
     # Create a file in the local data directory to upload and download

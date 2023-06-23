@@ -20,7 +20,9 @@ def download_upload_router():
     end_sec = data.get('EndSec', 20)
 
     try : 
+        print("hello")
         file_path = download_mp3(name_of_mp3, link, strt_min, strt_sec, end_min, end_sec)
+        print("kappa")
         url = mp3s_blob.upload_to_mp3s_container(file_path)
     except Exception as e:
         print(e)
@@ -53,7 +55,7 @@ def download_mp3(name_of_mp3="hulo", link="https://www.youtube.com/watch?v=RDo3P
     extract = extract.fade_out(5000)
     # Saving file in required location
     extract.export(os.path.dirname(os.path.realpath(__file__)) +
-                   "/../mp3s/"+new_file, format="mp3")
+                   "/mp3s/"+new_file, format="mp3")
     os.remove(new_file)
 
     return new_file
